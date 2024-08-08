@@ -38,6 +38,7 @@ view: target_county_data {
   }
   dimension: broadband_availability_unserved {
     type: number
+    value_format_name: percent_2
     sql: ${TABLE}.Broadband_Availability_Unserved ;;
   }
   dimension: child_food_insecurity {
@@ -194,6 +195,17 @@ view: target_county_data {
     value_format_name: percent_2
     sql: ${TABLE}.Work_From_Home ;;
   }
+  dimension: state {
+    type: string
+    map_layer_name: us_states
+    sql: ${TABLE}.state ;;
+  }
+  dimension: county_fips {
+    type: string
+    map_layer_name: us_counties_fips
+    sql: ${TABLE}.county_fips ;;
+  }
+
   measure: count {
     type: count
   }
